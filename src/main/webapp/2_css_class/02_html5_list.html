@@ -6,10 +6,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title> 카레만들기 </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title> 카레만들기 </title>
+
+<style type	="text/css">
+ul > li { list-style-type : square;}
+ol > li { list-style-type : none;
+			list-style-image : url(../images/common/icon_h2.gif)}
+/*none : 출력하지 않음*/
+/*block : 개행되어 출력*/
+/*none : 개행되지않고 출력*/
+span { display:none; }
+input:focus + span { display: block; } /*block이면 개행이 되버림 inline이면 개행이 안됨*/
+
+</style>
+	
 </head>
 <body>
+
+<input type='text'><span>한글로 5자이내 입력하세요</span>
+<hr/>
 
 <img src='/WebUI/images/sample/curry.jpg' width='250'> <!-- 절대경로 -->
 <img src='../images/sample/curry.jpg' alt='당근, 양파, 브로콜리가 들어있고 하얀접시에 담긴 카레'> <!-- 상대경로 -->
