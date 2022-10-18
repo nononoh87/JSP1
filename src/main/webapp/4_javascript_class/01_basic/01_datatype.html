@@ -9,13 +9,14 @@
 	 (1) 변수 선언 : var -> let, /const
 	 */
 	var byensu = '문자열';
-	console.log('변수의 값:' + byensu);
-	document.write('변수의 값' + byensu + "<br/>");
-	document.write('변수의 타입' + typeof byensu + "<br/>");
+	console.log('변수의 값:' + byensu);	
+	document.write('변수의 값' + byensu + "<br/>"); //변수의 값문자열
+	document.write('변수의 타입' + typeof byensu + "<br/>"); //변수의 타입string
+ 
 
 	var byensu = 1000;
-	document.write('변수의 값' + byensu + "<br/>");
-	document.write('변수의 타입' + typeof byensu + "<br/>");
+	document.write('변수의 값' + byensu + "<br/>");	//변수의 값1000
+	document.write('변수의 타입' + typeof byensu + "<br/>"); //변수의 타입number
 
 	/*   (2) let  (es6)
 	 - 변수의 중복 선언을 허용하지 않는다
@@ -23,8 +24,8 @@
 	 */
 	let byensu2 = '문자열';
 	console.log('변수의 값:' + byensu);
-	document.write('변수의 값' + byensu + "<br/>");
-	document.write('변수의 타입' + typeof byensu + "<br/>");
+	document.write('변수의 값' + byensu + "<br/>");	//변수의 값1000
+	document.write('변수의 타입' + typeof byensu + "<br/>");	//변수의 타입number
 
 	/* (3) const : 상수선언 (es6)
 	- 값을 재대입 금지
@@ -32,20 +33,21 @@
 	 */
 	const PI = 3.14;
 	// PI = 5; 상수는 값 변경불가, 출력 안됨!
-	document.write('PI 값' + PI + "<br/>");
+	document.write('PI 값 : ' + PI + "<br/>");	//PI 값 : 3.14
 
 	//----------------------------------------------------------------
 	// 2. 리터럴 - 변수의 값
-	var arr = [ '안녕', 'Hello', 'Hola', '곤니찌와' ];
-	document.write( arr[2] + '<br/>')
+	var arr = [ '안녕', 'Hello', 'Hola', '곤니찌와' ];	
+	document.write( arr[2] + '<br/>')	//Hola
 		
-	var arr2 = [ '안녕', [ 'Hello', 'Hola' ], '곤니찌와' ];
-	document.write( arr2[1][1] + '<br/>')
-	var obj = {x : '안녕', y : 'Hello', z : '곤니찌와'};
-	document.write( obj.y + '<br/>');	 //취향
-	document.write( obj['y'] + '<br/>'); //취향
+	var arr2 = [ '안녕', [ 'Hello', 'Hola' ], '곤니찌와' ];	
+	document.write( arr2[1][1] + '<br/>')	//Hola
 	
-	document.write( obj.ㅁ + '<br/>'); 	// undefined
+	var obj = {x : '안녕', y : 'Hello', z : '곤니찌와'};
+	document.write( obj.y + '<br/>');	 //취향	Hello
+	document.write( obj['y'] + '<br/>'); //취향	Hello
+	
+	document.write( obj.a + '<br/>'); 	// undefined
 	document.write( arr3 + '<br/>'); 	//arr3(변수) 존재하지 않아서 에러발생.
 	document.write( arr[5] + '<br/>'); 	// undefined
 	
