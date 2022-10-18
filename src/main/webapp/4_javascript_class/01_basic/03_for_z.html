@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	document.write("<table border='2'>");
+
+	for (var i = 0; i < 5; i++) {
+		document.write(i);
+	}
+
+	var k = 1;
+	for (var i = 0; i < 5; i++) {		//tr : table row , td : table data
+		document.write('<tr>');
+		for (var j = 0; j < 5; j++) {
+			document.write('<td>' + k++ + '</td>');
+		}
+
+		document.write('</tr>');
+	}
+	document.write('</table>');
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

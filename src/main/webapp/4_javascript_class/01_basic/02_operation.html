@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트의 연산자</title>
+<script type="text/javascript">
+	//1.  실수형 계산에는 주의 -> 2진수로 변환하여 저장하고 연산하기 때문에 발생
+	document.write(0.2 * 3 == 0.6);
+	document.write(0.2 * 3);
+	document.write(0.2 * 10 * 3 == 0.6 * 10); //실수형을 정수형으로 변환해서 계산
+	document.write("<hr/>");
+
+	//2.==와 === 차이는?
+	var num = 10; //숫자형
+	var str = '10'; //문자형
+
+	if (num == str)
+		document.write("같다1");
+	else
+		document.write("다르다1");
+
+	if (num === str)
+		document.write("같다1");
+	else
+		document.write("다르다1");
+
+	// 3. 기본형과 참조형
+	var a =10;
+	var b =10;
+	if (a == b)
+		document.write("같다3");
+	else
+		document.write("다르다3");
+	
+	var a =[10];
+	var b =[10];
+	if (a == b)
+		document.write("같다4");
+	else
+		document.write("다르다4");
+	
+	// 4. boolean형
+	document.write("<hr/>");
+	document.write(1==true);	//true
+	document.write(2==false);	//false
+	document.write(0==false);	//true
+	document.write(2==true);	//false
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
