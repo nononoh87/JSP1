@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <title> 이벤트 리스너 연결 </title>
+<script type="text/javascript">
+
+	window.onload = function(){
+		var b = document.getElementById('btn');
+		b.addEventListener('click', function(){
+			alert('확인4');			
+		});
+	}
+
+</script>
  </head>
  <body>
 	<input type='button' value='눌러'  id='btn' />

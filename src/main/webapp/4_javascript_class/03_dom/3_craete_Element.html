@@ -19,13 +19,41 @@
 	    	insertRow() , insertCell() 등
 	    */
 		// 1. 입력한 값들을 얻어온다.
-		// 2. 테이블요소 얻어온다.
-		// 3. tr 요소와 td 요소를 생성한다.
-		// 4. 텍스트노드(1번의 입력값)로 생성한다.
-		// 5. td 요소에 텍스트노드를 붙인다.
-		// 6. tr 요소에 생성한 td 요소를 붙인다.
-		// 7. 테이블요소에 tr요소를 붙인다.
+		var name =document.getElementById('name').value;
+		var age =document.getElementById('age').value;
+		var tel =document.getElementById('tel').value;
+		var addr =document.getElementById('addr').value;
 		
+		// 2. 테이블요소 얻어온다.
+		var tbl = document.getElementById('listTable');
+		
+		// 3. tr 요소와 td 요소를 생성한다.
+		var tr = document.createElement('tr');
+		var td1 = document.createElement('td');
+		var td2 = document.createElement('td');
+		var td3 = document.createElement('td');
+		var td4 = document.createElement('td');
+		
+		// 4. 텍스트노드(1번의 입력값)로 생성한다.
+		var txt1 = document.createTextNode(name);
+		var txt2 = document.createTextNode(age);
+		var txt3 = document.createTextNode(tel);
+		var txt4 = document.createTextNode(addr);
+		
+		// 5. td 요소에 텍스트노드를 붙인다.
+		td1.appendChild(txt1);
+		td2.appendChild(txt2);
+		td3.appendChild(txt3);
+		td4.appendChild(txt4);
+		
+		// 6. tr 요소에 생성한 td 요소를 붙인다.
+		tr.appendChild(td1);
+		tr.appendChild(td2);
+		tr.appendChild(td3);
+		tr.appendChild(td4);
+		
+		// 7. 테이블요소에 tr요소를 붙인다.
+		tbl.appendChild(tr);
 	
 	}
 </script>

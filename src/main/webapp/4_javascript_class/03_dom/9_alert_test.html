@@ -7,13 +7,22 @@
 
 	window.onload = function(){
 		// 1. alert
-		
+		//window.alert('이 사이트는 이사감') //window 생략가능
+		//window.location.href = 'http://www.ikosmo.co.kr';
+		//location.href = 'http://www.ikosmo.co.kr'; //window 생략가능
+		//window.location = 'http://www.ikosmo.co.kr';
 		
 		// 2. confirm
-		
+		//var result = window.confirm('변경된 주소로 이동할까요?');
+		//alert(result);
+		//if(result) window.location = 'http://www.ikosmo.co.kr';
 		
 		// 3. prompt : 
-		
+		var inputText =prompt('이동하길 원하는 url은?');
+		window.location =inputText;
+			
+			
+			
 	}
 
 </script>

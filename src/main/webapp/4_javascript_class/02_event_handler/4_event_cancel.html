@@ -2,15 +2,37 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> 이벤트 처리 취소</title>
+<title>이벤트 처리 취소</title>
+<style type="text/css">
+#inner {
+	border: 1px solid red;
+}
+
+#outer {
+	border: 1px solid green;
+}
+</style>
 <script>
 	/* 버블링 : 이벤트의 부모요소에 전달되는 단계
 	
 			- stopPropagation() : 이벤트 전달 취소
+				stopImmediatePropagation()
 			- preventDefault() : 이벤트 본래의 동작 취소
-	*/
+	 */
+	window.onload = function() {
+		var inner = document.getElementById('inner');
+		inner.addEventListener('click', function(evt) {
+			alert('인너 이벤트')
+			evt.stopPropagation();	//
+			evt.preventDefault();	//
+		});
+		
+		var outer = document.getElementById('outer');
+		outer.addEventListener('click', function() {
+			alert('아우터 이벤트')
+		});
 
-
+	}
 </script>
 </head>
 <body>

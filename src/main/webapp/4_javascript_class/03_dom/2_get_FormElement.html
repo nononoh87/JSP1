@@ -13,8 +13,18 @@
 <script type="text/Javascript">
 	window.onload = function(){
     	document.getElementById('btn').onclick = function(){
-
- 
+		
+ 			//1. id로 찾기
+ 			//var userName =document.getElementById('userName'); //둘다 Id로 찾는 방법
+ 			//var userName =document.querySelector('#userName');
+ 			
+ 			//2. name으로 찾기
+ 			//var userName =document.frm.username; //대소문자 가림
+ 			var userName =document.forms[0].username; //
+ 			
+ 			
+ 			var result =document.getElementById('result');
+ 			result.innerHTML = userName.value + "님 반갑";
     	}
     }
 </script>

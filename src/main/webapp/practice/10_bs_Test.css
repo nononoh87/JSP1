@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+tbl{
+	border: medium;
+	
+}
+td {
+	width: 100px;
+	height: 60px;
+	background: yellow;
+}
+
+.first {
+	background: blue;
+	
+}
