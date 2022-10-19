@@ -16,18 +16,18 @@
 	document.writeln(arr.slice(3) + '<br/>'); //김고은,임수정
 	document.writeln(arr.slice(1, 3) + '<br/>'); //송혜교,전지현
 
-	document.writeln(arr.reverse() + '<br/>');
-	document.writeln(arr + '<br/>');
+	document.writeln(arr.reverse() + '<br/>'); //임수정,김고은,전지현,송혜교,김태희
+	document.writeln(arr + '<br/>');	//임수정,김고은,전지현,송혜교,김태희
 
-	document.writeln(arr.sort() + '<br/>');
-	document.writeln(arr + '<br/>');
+	document.writeln(arr.sort() + '<br/>'); //김고은,김태희,송혜교,임수정,전지현
+	document.writeln(arr + '<br/>'); //김고은,김태희,송혜교,임수정,전지현
 
 	document.writeln(arr.pop() + '<br/>'); //전지현
-	document.writeln(arr + '<br/>');
+	document.writeln(arr + '<br/>');	//김고은,김태희,송혜교,임수정
 
 	var temp = [ '강동원', '고수' ]
-	document.writeln(arr.concat(temp) + '<br/>');
-	document.writeln(arr + '<br/>');
+	document.writeln(arr.concat(temp) + '<br/>'); //김고은,김태희,송혜교,임수정,강동원,고수
+	document.writeln(arr + '<br/>'); //김고은,김태희,송혜교,임수정
 
 	var arr2 = [ 5, 15, 20, 9 ];
 	document.writeln(arr2.sort() + '<br/>'); //15, 20, 5, 9(sort문자열로 처리됨)
