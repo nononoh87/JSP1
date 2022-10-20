@@ -4,7 +4,31 @@
 <meta charset="UTF-8">
 <title> 폼 예제 3 </title>
 <script type="text/javascript">
+window.onload = function(){
+	//오늘 날짜 구하기
+	var today = new Date();
+	frm1.y.value = today.getFullYear();
+	frm1.m.value = today.getMonth()+1;
+	frm1.d.value = today.getDate();
+	
+	document.querySelector('#btn').onclick = function(){
+		//(1) 화면에서 각각의 년,월,일 값을 지정하기
+		var year =document.frm1.y.value;
+		var month =document.frm1.m.value;
+		var date =document.frm1.d.value;
+		
+		//(2) Date() 객체에 각각에 년,월,일 값을 지정하기 
+		var today =new Date();
+		var fullyear = today.setFullYear(year, month+1, date);
 
+		//(3) 해당 날짜의 요일을 구하여 화면 출력
+		var day =['일','월','화','수','목','금','토'];
+		frm1.w.value = day[today.getDay()];
+		
+		
+	}
+	
+}
 </script>
 </head>
 <body>

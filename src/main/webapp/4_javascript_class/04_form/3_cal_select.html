@@ -7,6 +7,7 @@
 <!--  1. 자바스크립트에서 select 태그에 option 값들을 추가하고 오늘 날짜로 지정한다.
 			1) 년도는 올해년도를 기준으로 -5 ~ +5 으로 option 값을 지정한다.
 			2) 월은 1~12월 지정한다.
+			
 			3) 일을 해당 달에 맞는 1일부터 마지막날까지 지정한다.
 				[hint] Option 클래스 이용
 		
@@ -15,35 +16,73 @@
 		3. 오늘 날짜로 선택되어 있어야 한다.
 -->
 <script type="text/javascript">
-//오늘 날짜 구하기
-var today = new Date();
-var year = today.getFullYear();
-var month = today.getMonth();
-var date = today.getDate();
+	//오늘 날짜 구하기
+	var today = new Date();
+	var year = today.getFullYear();
+	var month = today.getMonth();
+	var date = today.getDate();
 
-var lastDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-var weeks = ['일','월','화','수','목','금','토'];
+	var lastDays = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+	var weeks = [ '일', '월', '화', '수', '목', '금', '토' ];
 
+	window.onload = function() {
 
-window.onload = function(){
-	
-	var frm = document.frm;
-	
-	// 년 구하기
-	for( var j=year-5;  j<= year+5; j++){
-		frm.y.add( new Option(j, j));				// 만들고 브라우저 F12에서 Elements로 확인 : Option(j)와 Option(j,j) 차이
+		var frm = document.frm;
+
+		// 년 구하기
+		for (var j = year - 5; j <= year + 5; j++) {
+			frm.y.add(new Option(j, j)); // 만들고 브라우저 F12에서 Elements로 확인 : Option(j)와 Option(j,j) 차이
+		}
+		// 월 구하기
+		for (var i = 1; i <= 12; i++) {
+			frm.m.add(new Option(i, i));
+		}
+		// 일 구하기
+		for (var k = 1; k <= lastDays[month]; k++) {
+			frm.d.add(new Option(k, k));
+		}
+
+		frm.y.value = year;
+		frm.m.value = month+1;
+		frm.d.value = date;
+
+		//이벤트 연결
+		frm.y.onchange = calc;
+		frm.m.onchange = calc;
+		frm.d.onchange = calc;
+
+		function calc() {
+			//(1) 화면에서 각각의 년,월,일 값을 지정하기
+			var year = document.frm.y.value;
+			var month = document.frm.m.value;
+			var date = document.frm.d.value;
+			
+			//(2) Date() 객체에 각각에 년,월,일 값을 지정하기 
+			var today = new Date();
+			var fullyear = today.setFullYear(year, month -1, date);
+			if(year=='2024' && month=='2'){
+				lastDays[1]=29;
+			}
+				
+			//(3) 해당 날짜의 요일을 구하여 화면 출력
+			frm.w.value = weeks	[today.getDay()];
+			
+			// [선택] 윤년인 경우 lastDay[1]=29
+			
+			frm.d.options.length=0;
+			
+			for(var k=1; k<=lastDays[month-1]; k++){
+			frm.d.add(new Option(k,k));
+			}
+		}
 	}
-
-}
 </script>
 
 </head>
 <body>
-<form name='frm'>
-	<select name='y'></select> 년
-	<select name='m'></select>월
-	<select name='d'></select>일
-	<input type='text' name='w' size='4'>요일
-</form>
+	<form name='frm'>
+		<select name='y'></select> 년 <select name='m'></select>월 <select
+			name='d'></select>일 <input type='text' name='w' size='4'>요일
+	</form>
 </body>
 </html>
