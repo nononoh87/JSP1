@@ -1,3 +1,4 @@
+내 드라이브
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,11 +6,13 @@
 <title>◆◆  Travel Sketch  ◆◆</title>
 <link href='css/travel.css' rel='stylesheet' type='text/css'>
 
-<script src='js/travel.js' type="text/javascript"></script>
+<script type="text/javascript" src="travel.js">	
 		// oninput 이벤트 연결도 가능
+</script>
 </head>
 
 <body>
+<form name="frm" id='frm' method="get" action="something.jsp">
 <table width="800" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td><img src="img/travel_01.gif" width="800" height="102" /></td>
@@ -49,21 +52,21 @@
                 <td width="110" height="25" bgcolor="#F7F7F7"> <div align="center"><span class="text1">성인(만12세이상)</span></div></td>
                 <td width="190" height="25" bgcolor="#FFFFFF">
                   <label>
-                    <input name="textfield" type="text" id="textfield" size="2" />
+                    <input name="adult" type="text" id="adult" size="2" />
                     </label>
                   <span class="text4">명 <span class="text2">[1인당 39.000원]</span></span></td>
                 <td width="80" height="25" rowspan="3" bgcolor="#F7F7F7"><div align="center"><span class="text1">상품합계금액</span></div></td>
                 <td width="100" height="25" rowspan="3" bgcolor="#FFFFFF"><span class="text4">=</span>
-                  <input name="textfield4" type="text" id="textfield4" value="0원" size="10" /></td>
+                  <input name="total" type="text" id="total" value="0원" size="10" /></td>
               </tr>
               <tr>
                 <td width="110" height="25" bgcolor="#F7F7F7"><div align="center"><span class="text1">아동(만12세미만)</span></div></td>
-                <td width="190" height="25" bgcolor="#FFFFFF"><input name="textfield2" type="text" id="textfield2" size="2" />
+                <td width="190" height="25" bgcolor="#FFFFFF"><input name="child" type="text" id="child" size="2" />
                  <span class="text4">명</span><span class="text4"> <span class="text2">[1인당 29.000원]</span></span> </td>
                 </tr>
               <tr>
                 <td width="110" height="25" bgcolor="#F7F7F7"><div align="center"><span class="text1">유아(만 2세이상)</span></div></td>
-                <td width="190" height="25" bgcolor="#FFFFFF"><input name="textfield3" type="text" id="textfield3" size="2" />
+                <td width="190" height="25" bgcolor="#FFFFFF"><input name="infant" type="text" id="infant" size="2" />
                  <span class="text4">명 <span class="text2">[1인당 19.000원]</span></span></td>
                 </tr>
             </table></td>
@@ -80,10 +83,10 @@
             <td width="20" height="50" valign="top">&nbsp;</td>
             <td height="50" valign="top"><div align="center" class="text1">
                   <label>
-                  <input type="checkbox" name="checkbox" id="checkbox" />
+                  <input type="checkbox" name="checkbox" id="checkbox" required/>
                   </label>
               여행약관에 동의합니다. 
-              <input type="checkbox" name="checkbox2" id="checkbox2" />
+              <input type="checkbox" name="checkbox2" id="checkbox2" required/>
               개인정보보호정책에동의합니다.</div></td>
             </tr>
           <tr>
@@ -95,39 +98,39 @@
             <td><table width="560" border="0" cellpadding="3" cellspacing="1" bgcolor="#CCCCCC">
               <tr>
                 <td width="80" height="25" bgcolor="F7F7F7"><span class="text1">한글이름</span></td>
-                <td width="170" height="25" bgcolor="#FFFFFF"><input name="name" type="text" id="textfield5" size="6" />
-                  <input name="radio" type="radio" id="radio" value="radio" checked="checked" />
+                <td width="170" height="25" bgcolor="#FFFFFF"><input name="koreanName" type="text" id="koreanName" size="6" pattern="[가-힣]{2,5}" required />
+                  <input name="sexRadio" type="radio" id="radio1" value="male" />
                   <span class="text1">남자</span>  
-                  <input type="radio" name="radio" id="radio2" value="radio" />
+                  <input name="sexRadio" type="radio" id="radio2" value="female" />
                    <span class="text1"> 여자  </span></td>
                 <td width="80" height="25" bgcolor="F7F7F7" class="text1">영문성/이름</td>
-                <td width="170" height="25" bgcolor="#FFFFFF"><input name="textfield9" type="text" id="textfield9" size="8" />
+                <td width="170" height="25" bgcolor="#FFFFFF"><input name="englishName1" type="text" id="englishName1" size="8" pattern="[A-Za-z]{2,}" required/>
                   <span class="text1">/</span>
-                    <input name="textfield10" type="text" id="textfield10" size="6" /></td>
+                    <input name="englishName2" type="text" id="englishName2" size="6" /></td>
               </tr>
               <tr>
                 <td width="80" height="25" bgcolor="F7F7F7"><span class="text1">연령기준</span></td>
                 <td width="170" height="25" bgcolor="#FFFFFF">
                   <label>
-                    <select name="select" class="text1" id="select">
+                    <select name="selectAge" class="text1" id="selectAge">
                       <option>연령기준선택</option>
                     </select>
                     </label>                </td>
                 <td width="80" height="25" bgcolor="F7F7F7" class="text1">주민번호</td>
-                <td width="170" height="25" bgcolor="#FFFFFF"><input name="textfield11" type="text" id="textfield11" size="6" />
+                <td width="170" height="25" bgcolor="#FFFFFF"><input name="jumin1" type="text" id="jumin1" size="6" pattern="[0-9]{6}" required/>
                   <span class="text1">-</span>
-                    <input name="textfield12" type="text" id="textfield12" size="8" /></td>
+                    <input name="jumin2" type="text" id="jumin2" size="8" pattern="[0-9]{8}" /></td>
               </tr>
               <tr>
                 <td width="80" height="25" bgcolor="F7F7F7"><span class="text1">전화번호</span></td>
                 <td width="170" height="25" bgcolor="#FFFFFF">
                   <span class="text1">
-                  <input name="textfield6" type="text" id="textfield6" size="2" /> - 
-                  <input name="textfield7" type="text" id="textfield7" size="3" /> -
-                  <input name="textfield8" type="text" id="textfield8" size="3" />
+                  <input name="tel1" type="text" id="tel1" size="2" pattern="[0-9]{2}" required/> - 
+                  <input name="tel2" type="text" id="tel2" size="3" pattern="[0-9]{3}" required/> -
+                  <input name="tel3" type="text" id="tel3" size="3" pattern="[0-9]{3}" required/>
                   </span></td>
                 <td width="80" height="25" bgcolor="F7F7F7" class="text1">이메일주소</td>
-                <td width="170" height="25" bgcolor="#FFFFFF"><input name="textfield13" type="text" id="textfield13" size="18" /></td>
+                <td width="170" height="25" bgcolor="#FFFFFF"><input name="email" type="text" id="email" size="18" required/></td>
               </tr>
               <tr>
                 <td width="80" height="25" bgcolor="F7F7F7"><span class="text1">여권관련정보</span></td>
@@ -151,12 +154,11 @@
                 </tr>
               <tr>
                 <td width="80" height="25" bgcolor="F7F7F7"><span class="text1">리턴연장여부</span></td>
-                <td height="25" colspan="3" bgcolor="#FFFFFF">
-                	<input name="radio" type="radio" id="radio3" value="radio" checked="checked" />
-                 	<span class="text1">                  예 
-                  	<input name="radio" type="radio" id="radio4" value="radio" />
+                <td height="25" colspan="3" bgcolor="#FFFFFF"><input name="radio" type="radio" id="radio3" value="radio" checked="checked" />
+                  <span class="text1">                  예 
+                  <input name="radio" type="radio" id="radio4" value="radio" />
                   아니오 현지출발예정일
-                  	<input name="textfield17" type="text" id="textfield17" size="10" />
+                  <input name="textfield17" type="text" id="textfield17" size="10" />
                   </span> <span class="text1">관광진흥기금
                   <select name="select4" class="text1" id="select4">
                     <option>▷포함</option>
@@ -185,7 +187,8 @@
                 <td colspan="6">&nbsp;</td>
                 </tr>
               <tr>
-                <td><img src="img/travel_button_01.gif" width="84" height="27" /></td>
+<!--                 <td><input type ='image' src="img/travel_button_01.gif" id ='submit' width="84" height="27" /></td> -->
+                <td><button type='submit'><img src="img/travel_button_01.gif" id ='submit' width="84" height="27" /></button></td>
                 <td width="2">&nbsp;</td>
                 <td><img src="img/travel_button_02.gif" width="71" height="27" /></td>
                 <td width="2">&nbsp;</td>
@@ -206,5 +209,6 @@
     <td height="37" colspan="2" bgcolor="#000000"></td>
   </tr>
 </table>
+</form>
 </body>
 </html>

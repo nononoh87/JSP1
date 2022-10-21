@@ -4,13 +4,21 @@
 <meta charset="euc-kr">
 <title> window 예제 </title>
 <script type="text/javascript">
-
+window.onload = function(){
 		/*
 		1. 선택한 옵션의 값(value)을 얻어온다.
 		2. location 객체의 href 프로퍼티에 url을 지정
 		*/
-
-
+		var sel = document.querySelector('#chooseSite');
+		sel.onchange = showSite;
+		
+		function showSite(){
+			var nextPage = sel.value;
+			//alert(nextPage)
+			location.href = nextPage;	// 차이점 : 뒤로가기 버튼이 생김
+			//location.replace(nextPage);// 차이점 : 뒤로가기 버튼이 안보임
+		}
+}
 </script>
 </head>
 <body>

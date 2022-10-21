@@ -11,10 +11,20 @@
 	<progress max="100" id="progress"></progress>
 </body>
 <script>
-	var progress = document.getElementById("progress");
+/*	var progress = document.getElementById("progress");
 	var current = 0;
 
+	setInterval(updateProgress, 100);
+	//setTimeout(updateProgress, 20000);
 	
+	function updateProgress(){
+		progress.value = ++current;
+	}
+*/	
+	//위에 문장 간단히
+	setInterval (function(){
+			progress.value = ++current;
+	},100);
 	
 	
 

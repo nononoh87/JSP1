@@ -6,15 +6,18 @@
 <script>
  
 	// @ 1. 인수의 기본값(default) 지정
-   	function multiple( first, second )
+   	function multiple( first, second=1 )
 	{
 		return first * second;
 	}
-	document.writeln('곱은 ' +  multiple( 3, 4 ) + '<br/>'  );
-	document.writeln('곱은 ' +  multiple( 3, 4, 5 ) + '<br/>'  );
-	document.writeln('곱은 ' +  multiple( 3 ) + '<br/>' ); 
-	
-
+	document.writeln('곱은 ' +  multiple( 3, 4 ) + '<br/>'  );		//12
+	document.writeln('곱은 ' +  multiple( 3, 4, 5 ) + '<br/>'  );		//12
+	document.writeln('곱은 ' +  multiple( 3 ) + '<br/>' ); 			//3
+	/*
+	document.writeln('곱은 ' +  multiple( 3, null ) + '<br/>' ); 		//0
+	document.writeln('곱은 ' +  multiple( 3, false ) + '<br/>' ); 	//0
+	document.writeln('곱은 ' +  multiple( 3, undefined ) + '<br/>' );//3
+	*/
 	
 	
 	// @ 2. 가변길이 인수(...)

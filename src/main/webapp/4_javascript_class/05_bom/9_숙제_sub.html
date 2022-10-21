@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script type="text/javascript">
+
+	function push(){
+		opener.frm.text.value=fm.loc.value;	
+	}
+</script>
+</head>
+<body>
+
+<form name='fm'>
+	받은 결과 : <input type='text' name='text' size='20'/><hr/>
+	<input type='radio' name='loc' value='가산'  onclick='push()'>가산<br/>
+	<input type='radio' name='loc' value='판교' onclick='push()'>판교<br/>
+	<input type='radio' name='loc' value='부평' onclick='push()'>부평
+</form>
+</body>
+</html>

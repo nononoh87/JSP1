@@ -5,16 +5,27 @@
 	<title>자바스크립트 함수 3가지</title>
 	<script>
 	// 1. function 명령
-	
-
+/*	function triangle(base, height){
+		return base*height/2;
+	}
+	document.write('1. 삼각형의 넓이:' + triangle(2,3) + '<br/>');
+*/
 	// 2. 함수리터럴   * 리터럴 : 변수의 값		
-	
-	
-	// 3. Function 생성자
-	
-	
+/*	 var triangle = unction(base, height){
+		return base*height/2;
+		}
+		document.write('2. 삼각형의 넓이:' + triangle(2,3) + '<br/>');
+*/
+	// 3. Function 생성자	// 잘 안쓰임.
+/*	var triangle = 
+		new Function('base', 'height', 'return base*height/2'); 
+		document.write('3. 삼각형의 넓이:' + triangle(2,3) + '<br/>');
+*/		
 	// 4. 애로우함수
-	
+	let triangle = (base, height) => {
+		return base*height/2;
+	};
+	document.write('4. 삼각형의 넓이:' + triangle(2,3) + '<br/>');
 	
 	
 	</script>

@@ -27,7 +27,22 @@
 <meta charset="UTF-8">
 <title> window 예제 </title>
 <script type="text/javascript">
-
+window.onload = function(){
+	
+	winObj = window.open("","", "width=500, height=650")
+	
+	var sel = frm.chooseSite;
+	sel.onchange = showSite;
+	
+	function showSite(){
+		winObj.location.href = sel.value;
+		
+	}
+}
+/*
+ 	여기서 창을 열었을 때, 변수를 받아서 
+ 	그 변수로 열린 창의 요소를 찾을수 있음
+. */
 	
 </script>
 </head>
@@ -36,9 +51,9 @@
 		<h1> 이동하길 원하는 페이지를 선택하세요 </h1>
 		<select name="chooseSite">
 			<option>골라 골라</option>
-			<option>다음네</option>
-			<option>네이바</option>
-			<option>네이또</option>
+			<option name=daum value="http://www.daum.net">다음네</option>
+			<option name=naver value="http://www.naver.com">네이바</option>
+			<option name=nate value="http://www.nate.com">네이또</option>
 		</select>
 	</form>
 </body>
