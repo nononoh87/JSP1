@@ -7,9 +7,9 @@
 <body>
 <script>
 
-//0. 	클래스 선언 -  생성자로 초기화하기
+//0. 	클래스 선언 -  생성자로 초기화하기(대문자로 시작하면 클래스 선언)
 function Student(id, name, dept){
-	this.id = id;
+	this.id = id;		//this.멤버변수 선언
 	this.name = name;
 	this.dept = dept;
 	
@@ -21,7 +21,7 @@ function Student(id, name, dept){
 	}
 }
 
-var kim = new Student("001","김길동", "컴공");
+var kim = new Student("001","김길동", "컴공"); //new 일때 불려지면 생성자 함수
 var lee = new Student("002","이길동", "경영");
 
 document.write( kim.display() );
