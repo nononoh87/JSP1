@@ -10,7 +10,7 @@ window.onload = function(){
 			
 			//alert(frm.agree.checked);
 			if(!frm.agree.checked){
-				alert('반드시 케크해주셔야만 합니다.');
+				alert('반드시 체크해주셔야만 합니다.');
 				return;
 			}
 			

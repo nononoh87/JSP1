@@ -9,6 +9,40 @@
 	.border { border : 3px dotted red; }
 </style>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//원래 이벤트 연결 함수 : bind( / one()
+	$('li').bind('click', function(){
+		var liTxt = $(this).text();	//jquery 
+		//var liTxt =this.innerHtml; //js코드 j쿼리가 안먹을때 js 코드를 적자
+		
+		$('#result').text(liTxt);
+	});
+/* 	$('li').click('click', function(){
+		$('#result').text($(this).text());
+	}); */
+	
+	//$('ul') 기존에 있는 것을 찾는것
+	//$('<ul>')	새로운 것을 만드는것
+	
+	// 동적으로 생성된 요소에는 이벤트 연결 불가
+	
+	
+	$('h1').bind('click', function(){
+		var n = $('<li/>').text(new Date()); // new 뒤에는 무조건 대문자 시작
+		$('ul').append(n);
+	});
+	
+
+	$('ul').on('click','li', function(){
+		$('#result').text($(this).text());
+	});
+	
+})
+
+
+</script>
 </head>
 <body>
 	<h1>제이쿼리 이벤트</h1>

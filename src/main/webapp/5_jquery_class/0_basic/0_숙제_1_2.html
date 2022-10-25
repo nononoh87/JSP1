@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>0.숙제 - 4조</title>
+<style type="text/css">
+div.out {
+	width: 40%;
+	height: 120px;
+	margin: 0 15px;
+	background-color: #D6EDFC;
+	float: left;
+}
+
+div.in {
+	width: 60%;
+	height: 60%;
+	background-color: #FFCC00;
+	margin: 10px auto;
+}
+
+p {
+	line-height: 1em;
+	margin: 0;
+	padding: 0;
+}
+
+
+</style>
+<script src='/WebUI/5_jquery_class/lib/jquery-3.6.1.js'
+	type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+		//1
+		$("#div1").click(function() {
+			console.log(this);
+			console.log("=================");
+
+			console.log($(this));
+			$("#test1").text($(this));
+			$("#test2").text(this);
+		})
+		
+		//2
+		var i = 0;
+		$("div.overout").mouseover(function() {
+			$("p:first", this).text("mouse over");
+			$("p:last", this).text(++i);
+		}).mouseout(function() {
+			$("p:first", this).text("mouse out");
+		});
+
+		var n = 0;
+		$("div.enterleave").mouseenter(function() {
+			$("p:first", this).text("mouse enter");
+			$("p:last", this).text(++n);
+		}).mouseleave(function() {
+			$("p:first", this).text("mouse leave");
+		});
+
+
+	});
+</script>
+<!--
+	예문으로 확인
+	(1) this/ $(this) 차이
+		this : 이벤트가 발생한 태그 요소가 표시
+		$(this) : 이벤트가 발생한 요소의 정보들이 Object로 표시
+	
+	(2) mouseover(mouseout)/mouseenter(mouseleave)
+		- mouseover/out : 
+			마우스가 요소 안에 들어가거나 벗어날 때 발생함
+			직접 이벤트를 걸지 않은 자식요소에서 감지 가능
+		- mouseenter/leave : 
+			마우스가 요소의 경계를 이동할 때 발생함
+			오로지 자기 자신에서의 마우스 포인터만 감지 가능
+		
+-->
+
+
+</head>
+<body>
+	<h1>1번</h1>
+	<div id="div1"
+		style="height: 100px; width: 300px; border: 1px solid black; background-color: yellow;"></div>
+	
+	
+	<div id="test1"></div>
+
+	<div id="test2"></div>
+	<hr />
+	<h1>2번</h1>
+	<div class="out overout">
+		<p>move your mouse</p>
+		<div class="in overout">
+			<p>move your mouse</p>
+			<p>0</p>
+		</div>
+		<p>0</p>
+	</div>
+
+	<div class="out enterleave">
+		<p>move your mouse</p>
+		<div class="in enterleave">
+			<p>move your mouse</p>
+			<p>0</p>
+		</div>
+		<p>0</p>
+	</div>
+
+</body>
+</html>
