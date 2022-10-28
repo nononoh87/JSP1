@@ -6,11 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>회원 가입</title>
 <!-- 외부 CSS 연결 -->
-
+<link rel = "stylesheet" type="text/css" href="09_myform.css"></link>
 </head>
 
 <body>
-<form  action="" method="get">
+<form  action="09_server.jsp" method="get">
 <fieldset>
 <legend>기본정보</legend>
 <ol>
