@@ -16,7 +16,7 @@
 </head>
 <body>
 <%
-	if( result ) {
+	if(  result ) {
 %>		
 		사용중인 아이디가 있습니다. 다시 입력하여 주십시오.
 <%  }else { %>
