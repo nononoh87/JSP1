@@ -4,11 +4,11 @@
 
 <%	
 	// 1. Cookie 객체 생성
-	
+	Cookie c = new Cookie("yourid","silvina");
 	// 2. 속성 부여
-	
+	//c.setMaxAge(1*60*3);	//(1*60*3) 3분
 	// 3. 클라이언트에 쿠키 전송
-	
+	response.addCookie(c); //클라이언트에 저장
 %>
 
 <html>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
 <html><head><title>우리 쇼핑 몰</title></head> 
 <body> 
 <h2>쇼핑 몰</h2> 

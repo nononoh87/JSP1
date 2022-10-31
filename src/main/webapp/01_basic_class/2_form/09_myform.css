@@ -108,11 +108,11 @@ form input:not([type=radio]) {
 	width: 200px;
 }
 					
-form input:not([type=submit]):focus, {
+form input:not([type=submit]):focus {
 	background: #eaeaea;
 }
 					
-				
+	 			
 form button {
 	background: #384313;
 	border: none;
