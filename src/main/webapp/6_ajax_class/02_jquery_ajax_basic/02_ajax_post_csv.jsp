@@ -11,7 +11,7 @@ $(function(){
 	$.ajax({
 		type : 'post',
 		data : param,
-		url : '01_server.jsp',
+		url : '02_server.jsp',
 		success : parseData,
 		error : function(){
 			alert('error');
@@ -19,7 +19,7 @@ $(function(){
 		}
 	});
 	
-	//$.post('01_server.jsp', param, parseData); // 축약형
+	//$.post('02_server.jsp', param, parseData); // 축약형
 	
 	function parseData(strText){
 		
