@@ -7,9 +7,9 @@
    
    String pNum = request.getParameter("page");
    
-   // int pNum2 = Integer.parseInt(pNum);
+   // int pNum2 = Integer.parseInt(pNum); //문자를 정수도 바꿈
       int pNum2 = 1;
-      if(pNum!=null)  pNum2 = Integer.parseInt(pNum);
+      if(pNum!=null)  pNum2 = Integer.parseInt(pNum); //문자를 정수도 바꿈
       
    // 전체 메세지 레코드 검색 
    

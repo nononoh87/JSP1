@@ -4,17 +4,17 @@
     
 <%
 	//0. 넘겨받는 데이타의 한글처리
-	request.setCharacterEncoding("utf-8");
+	request.setCharacterEncoding("utf-8"); 
 %>
  <!--  1. 화면의 입력값을 Message 클래스로 전달-->
-<jsp:useBean id="m" class="guest.model.Message">
-	<jsp:setProperty name ='m' property='*'/>
+<jsp:useBean id="m" class="guest.model.Message"> <!--useBean은 자바빈 객체를 생성하는 액션태그,  id 속성에서 지정한 이름의 속성 값이 있을 경우 그 객체를 그대로 사용하고, 없을 경우 새로운 객체를 생성  -->
+	<jsp:setProperty name ='m' property='*'/>	 <!--자바빈 파일의 setter 메서드를 사용하기 위해, 즉 데이터의 값을 설정할 때 사용 -->
 </jsp:useBean>	
 
 <%
 	//2. Service 클래스의 함수 호출
 	WriteMessageService service =
-			WriteMessageService.getInstance();
+			WriteMessageService.getInstance(); //객체를 반환
 	service.write(m);
 %>
 

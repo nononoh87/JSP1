@@ -24,7 +24,7 @@ public class MessageDao {
    
    //--------------------------------------------
    //#####    객체 생성하는 메소드 
-   public static MessageDao   getInstance() throws MessageException
+   public static MessageDao   getInstance() throws MessageException //
    {
       if( instance == null )
       {
@@ -57,7 +57,7 @@ public class MessageDao {
     */
    public void insert(Message rec) throws MessageException
    {
-      Connection          con = null;
+      Connection        con = null;
       PreparedStatement ps = null;
       try{
 
@@ -75,9 +75,10 @@ public class MessageDao {
             ps.setString(3, rec.getMessage());
             
          // 4. 전송하기
-            ps.executeUpdate();
-            
-            
+            ps.executeUpdate(); //1. 수행결과로 Int 타입의 값을 반환.
+            					//2. SELECT 구문을 제외한 다른 구문을 수행할 때 사용되는 함수.
+            					// -> INSERT / DELETE / UPDATE 관련 구문에서는 반영된 레코드의 건수를 반환합니다.
+            					// -> CREATE / DROP 관련 구문에서는 -1 을 반환
             
       }catch( Exception ex ){
          throw new MessageException("방명록 ) DB에 입력시 오류  : " + ex.toString() );   
@@ -103,7 +104,9 @@ public class MessageDao {
          con = DriverManager.getConnection(dbUrl, dbUser, dbPass);
          String sql = "SELECT * FROM guesttb";
           ps = con.prepareStatement(sql);
-          rs = ps.executeQuery();    
+          rs = ps.executeQuery();	//1. 수행결과로 ResultSet 객체의 값을 반환.
+									//2. SELECT 구문을 수행할 때 사용되는 함수.
+									// -> ResultSet 객체에 결과값을 담을 수 있다.    
           
          while(rs.next()) {
             Message m = new Message();
@@ -154,7 +157,10 @@ public class MessageDao {
           ps = con.prepareStatement(sql);
           ps.setInt(1, firstRow);
           ps.setInt(2, endRow);
-          rs = ps.executeQuery();    
+          	
+          rs = ps.executeQuery();	//1. 수행결과로 ResultSet 객체의 값을 반환.
+          							//2. SELECT 구문을 수행할 때 사용되는 함수.
+          							// -> ResultSet 객체에 결과값을 담을 수 있다.   
           
          while(rs.next()) {
             Message m = new Message();
@@ -230,7 +236,10 @@ public class MessageDao {
            ps.setInt(1, messageId);
            ps.setString(2, password);
            
-          result = ps.executeUpdate(); // 
+          result = ps.executeUpdate(); 	//1. 수행결과로 Int 타입의 값을 반환.
+										//2. SELECT 구문을 제외한 다른 구문을 수행할 때 사용되는 함수.
+										// -> INSERT / DELETE / UPDATE 관련 구문에서는 반영된 레코드의 건수를 반환합니다.
+										// -> CREATE / DROP 관련 구문에서는 -1 을 반환
 
          return result;
       }catch( Exception ex ){

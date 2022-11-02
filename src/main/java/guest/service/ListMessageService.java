@@ -54,11 +54,11 @@ public class ListMessageService {
       totalRecCount = MessageDao.getInstance().getTotalCount();
       /*
        *     전체레코드수        페이지수
-       *        9            4
+       *           9            4
        *          10            4
        *          11            4
        *          12            4
-       *          13             5
+       *          13            5
        */
       pageTotalCount =  totalRecCount / countPerPage;
       if ( totalRecCount % countPerPage > 0) {
