@@ -135,7 +135,7 @@ public class MessageDao {
    
 
    /* -------------------------------------------------------
-    * 현재 페이지에 보여울 메세지 목록  얻어올 때
+    * 현재 페이지에 보여줄 메세지 목록  얻어올 때
     */
    public List<Message> selectList(int firstRow, int endRow) throws MessageException
    {
