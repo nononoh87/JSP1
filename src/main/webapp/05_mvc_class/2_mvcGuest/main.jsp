@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<% String projectName = "/JSP1"; %>    
+<%-- <% String projectName = "/JSP1"; %>     --%>
 
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@
 </head>
 <body>
 	메인화면이라 . . . 그냥 상상하고 . . . 
-	<a href="<%= projectName %>/GuestControl?cmd=list-page"> 방명록 </a><br/><br/>
+	<a href="/JSP1/GuestControl?cmd=list-page"> 방명록 </a><br/><br/>
 	<img src="imgs/image.gif"><br/>
 </body>
 </html>

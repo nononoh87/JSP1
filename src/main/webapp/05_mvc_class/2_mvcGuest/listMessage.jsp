@@ -4,9 +4,14 @@
 <%@ page import="java.util.List" %>
  
 <%
+
+	
 	// Control에서 param에 저장한 mList 변수에 지정
 	   
 	List <Message> mList = (List <Message>)request.getAttribute("param");
+	
+	
+	
 %>    
 <!DOCTYPE html>
 <html>
@@ -28,6 +33,7 @@
 			<td> <%= msg.getId() %> </td> 
 			<td> <%= msg.getGuestName() %></td> 
 			<td> <a href="GuestControl?cmd=delete-form&id=<%= msg.getId() %>"> [ 삭제하기 ]</a> </td>			
+			<td> <a href="GuestControl?cmd=modify-form&id=<%= msg.getId() %>"> [ 수정하기 ]</a> </td>
 		</tr>
 		<tr>
 			<td colspan='3'> 

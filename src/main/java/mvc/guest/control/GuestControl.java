@@ -14,7 +14,10 @@ import mvc.guest.command.CommandDelete;
 import mvc.guest.command.CommandException;
 import mvc.guest.command.CommandInput;
 import mvc.guest.command.CommandList;
+import mvc.guest.command.CommandModify;
+import mvc.guest.command.CommandModifyForm;
 import mvc.guest.command.CommandNull;
+
 
 /**
  * Servlet implementation class GuestControl
@@ -41,7 +44,8 @@ public class GuestControl extends HttpServlet {
 		commandMap.put("input-do", new CommandInput("saveMessage.jsp") );
 		commandMap.put("delete-form", new CommandNull("deleteMessage.jsp") );//삭제창 띄움
 		commandMap.put("delete-do", new CommandDelete("deleteConfirm.jsp") ); //삭제
-	
+		commandMap.put("modify-form", new CommandModifyForm("modify-form.jsp"));
+		commandMap.put("modify-do", new CommandModify("modify.jsp"));
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
