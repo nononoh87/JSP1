@@ -1,8 +1,3 @@
-/shop/
-/Info/
-/beans/
-/member/
-/guest/
-/board_ex/
-/mvc/
-/mvc2/
+/mybatis/
+/temp/
+/db.properties
